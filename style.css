@@ -1,0 +1,340 @@
+h1 {
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+.robots {
+	/* padding: 120px; */
+	/* background-color: aqua; */
+}
+
+.android{
+	width: 300px;
+	margin: 0 auto;
+	position: relative;
+	/* background-color: beige; */
+}
+
+/* ============================= */
+/* MOODS POSITIONING BEGIN */
+/* ============================= */
+.mood{
+	position: absolute;
+	top: -20px;
+	right: -180px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.title{
+	top: 0px;
+	color: red;
+	padding-left: 5px;
+	margin: 10px 0px;
+}
+
+.android > p{
+	border: 2px solid red;
+	padding: 10px 10px;
+	margin: 10px 10px 0px 0px;
+	border-radius: 8px;
+
+}
+
+.happy{
+	width: 150px;
+	top: 35px;
+	right: -220px;
+}
+
+.sad{
+	width: 150px;
+	top: 80px;
+	right: -220px;
+}
+
+.angry{
+	width: 150px;
+	top: 125px;
+	right: -220px;
+}
+
+.mj{
+	width: 150px;
+	top: 169.5px;
+	right: -220px;
+}
+
+
+/* apply the style to all direct p childs in .android EXCEPT .title */
+.android > p:not(.title):hover{
+	background-color: aqua;
+}
+
+/* MOOD HOVER ANIMATIONS  */
+.happy:hover ~ .right-brow{
+	opacity: 1;
+}
+
+.happy:hover ~ .left-brow{
+	opacity: 1;
+}
+
+.sad:hover ~.left-brow{
+	opacity: 1;
+	top: 88px;
+	left: 80px;
+	transform: rotate(-25deg);
+}
+
+.sad:hover ~.right-brow{
+	opacity: 1;
+	top: 88px;
+	left: 180px;
+	transform: rotate(25deg);
+}
+
+.angry:hover ~.left-brow{
+	opacity: 1;
+	top: 88px;
+	transform: rotate(15deg);
+	border-radius: 0px;
+}
+
+.angry:hover ~.right-brow{
+	opacity: 1;
+	top: 88px;
+	transform: rotate(-15deg);
+	border-radius: 0px;
+}
+
+/* ============================= */
+/* MOODS POSITIONING END */
+/* ============================= */
+
+
+.head, 
+.left_arm, 
+.torso, 
+.right_arm, 
+.left_leg, 
+.right_leg {
+	 background-color: #5f93e8;
+}
+
+.head { 
+	width: 200px; 
+	margin: 0 auto; 
+	height: 150px; 
+	border-radius: 200px 200px 0 0; 
+	margin-bottom: 10px;
+	transition-duration: 0.2s;
+	z-index: -1;
+}
+
+/* Hover to animate head looking right */
+.look-right:hover ~ .head {
+	width: 190px;
+	transform: translateX(5px) rotate(0.8deg);
+	/* background-color: red; */
+}
+
+.look-left:hover ~ .head {
+	width: 190px;
+}
+
+
+.left_eye, .right_eye { 
+	width: 20px; 
+	height: 20px; 
+	border-radius: 15px; 
+	background-color: white;  
+} 
+
+.eyes {
+	display: flex;
+	position: relative;
+	/* z-index: 2; */
+}
+
+.left_eye { 
+	/* These properties are new and you haven't encountered
+	in this course. Check out CSS Tricks to see what it does! */
+	position: relative; 
+	top: 100px; 
+	left: 40px; 
+} 
+
+.right_eye { 
+	position: relative; 
+	top: 100px; 
+	left: 122px; 
+}
+
+/* ============================= */
+/* EYEBROW ACTION */
+/* ============================= */
+.left-brow{
+	position: absolute;
+	width: 40px;
+	height: 20px;
+	background-color: #5f93e8;
+	top: 110px;
+	left: 80px;
+	border-radius: 50%;
+	transform: rotate(-6deg);
+	opacity: 0;
+	z-index: 2;
+	/* border: 1px solid yellow; */
+}
+
+.right-brow{
+	position: absolute;
+	width: 40px;
+	height: 20px;
+	background-color: #5f93e8;
+	top: 110px;
+	left: 182px;
+	border-radius: 50%;
+	transform: rotate(6deg);
+	opacity: 0;
+	z-index: 2;
+	/* border: 1px solid black; */
+}
+
+.look-left{
+	width: 101px;
+	height: 148px;
+	border-radius: 100px 0px 0px 0px;
+	position: absolute;
+	top: 0px;
+	left: 50px;
+	/* border: 1px solid red; */
+	/* background-color: red; */
+}
+
+.look-right{
+	width: 101px;
+	height: 148px;
+	border-radius: 0px 100px 0px 0px;
+	position: absolute;
+	top: 0px;
+	right: 50px;
+
+	/* border: 20px solid red; */
+	/* margin: -20px; */
+	z-index: 9;
+	/* background-color: black; */
+}
+
+
+
+/* .look-right:hover ~ .upper_body {
+	width: 280px;	
+} */
+
+.upper_body { 
+	width: 300px; 
+	height: 150px;
+	display: flex;
+	margin: 0 auto;
+	position: relative;
+	transition: width 0.55s ease-in-out;
+	/* border: 2px solid blue; */
+} 
+
+.left_arm, .right_arm { 
+	width: 40px; 
+	height: 125px;
+	border-radius: 100px; 
+} 
+
+.left_arm { 
+	margin-right: 10px; 
+	transform: translateX(0px) translateY(0px) rotate(0deg);
+	transition: transform 0.3s ease-in-out;
+} 
+
+.left-grab{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: rgb(207, 105, 105);
+	position: absolute;
+	top: 10px;
+	left: -150px;
+}
+
+.left-grab p{
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	position: inherit;
+	top: -5px;
+	cursor: default;
+}
+
+.left-grab:hover ~.left_arm{
+	transform: translateX(-40px) translateY(-30px) rotate(80deg);
+}
+
+.left_arm:hover{
+	transform: translateX(-12px) translateY(-2px) rotate(20deg);
+}
+
+
+.right_arm { 
+	margin-left: 10px; 
+	transform: translateX(0px) translateY(0px) rotate(0deg);
+	transition: transform 0.2s ease-in-out;
+}
+
+.right_arm:hover{
+	transform: translateX(10px) translateY(-3px) rotate(-20deg);
+}
+
+.torso { 
+	width: 200px; 
+	height: 200px;
+	border-radius: 0 0 50px 50px; 
+} 
+
+.lower_body { 
+	width: 200px; 
+	height: 200px;
+	/* This is another useful property. Hmm what do you think it does?*/
+	margin: 0 auto;
+	display: flex;
+
+} 
+
+.left_leg, .right_leg { 
+	width: 40px; 
+	height: 120px;
+	border-radius: 0 0 100px 100px; 
+} 
+
+.left_leg { 
+	margin-left: 45px; 
+	transform: translateX(0px) rotate(0deg);
+	transition: transform 0.15s ease-in-out;
+} 
+
+.left_leg:hover {
+	-webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: translateX(-5px) rotate(20deg);
+}
+
+.right_leg { 
+	margin-left: 30px; 
+	/* background-color: red; */
+	transform: translateX(0px) translateY(0px) rotate(0deg);
+	transition: transform 0.2s ease-in-out;
+}
+
+.right_leg:hover{
+	transform: translateX(20px) translateY(0px) rotate(-30deg);
+}
